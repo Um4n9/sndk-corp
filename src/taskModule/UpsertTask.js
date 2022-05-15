@@ -26,6 +26,7 @@ const UpsertTask = ({ closeModal, addTask, updateTask, task }) => {
   }, []);
 
   const onFinish = (values) => {
+    closeModal();
     console.log("Success:", values);
     if (task) {
       values.id = task.id;
@@ -106,7 +107,7 @@ const UpsertTask = ({ closeModal, addTask, updateTask, task }) => {
             Cancel
           </Button>
           <Button type="primary" htmlType="submit">
-            Add
+            {task ? "Save" : "Add"}
           </Button>
         </Form.Item>
       </Form>

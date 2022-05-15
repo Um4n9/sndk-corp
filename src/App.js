@@ -28,9 +28,31 @@ function App() {
     <div className="App">
       <>
         <Routes>
-          <Route path="/" element={<Task />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/task" element={<Task />} />
+          <Route
+            path="/"
+            element={
+              <React.Suspense fallback={<>Loading...</>}>
+                <Task />
+              </React.Suspense>
+            }
+          />
+
+          <Route
+            path="/login"
+            element={
+              <React.Suspense fallback={<>Loading...</>}>
+                <Login />
+              </React.Suspense>
+            }
+          />
+          <Route
+            path="/task"
+            element={
+              <React.Suspense fallback={<>Loading...</>}>
+                <Task />
+              </React.Suspense>
+            }
+          />
         </Routes>
       </>
     </div>

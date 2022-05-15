@@ -67,58 +67,60 @@ const Login = () => {
   };
 
   return (
-    <div className="login-main">
-      <Form
-        {...layout}
-        form={form}
-        name="login"
-        layout={"vertical"}
-        initialValues={{
-          remember: true,
-        }}
-        onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
-        autoComplete="off"
-      >
-        <Form.Item
-          label="Email"
-          name={"email"}
-          rules={[
-            {
-              required: true,
-              message: "Please enter email!",
-            },
-          ]}
+    <div className="login-main-wrapper">
+      <div className="login-form-wrapper">
+        <Form
+          {...layout}
+          form={form}
+          name="login"
+          layout={"vertical"}
+          initialValues={{
+            remember: true,
+          }}
+          onFinish={onFinish}
+          onFinishFailed={onFinishFailed}
+          autoComplete="off"
         >
-          <Input
-            onChange={() => {
-              setError();
-            }}
-          />
-        </Form.Item>
-        <Form.Item
-          label="Password"
-          name={"password"}
-          rules={[
-            {
-              required: true,
-              message: "Please enter password!",
-            },
-          ]}
-        >
-          <Input
-            onChange={() => {
-              setError();
-            }}
-          />
-        </Form.Item>
-        <div className="error-wrapper">{error}</div>
-        <Form.Item {...tailLayout} className="login-form-tail">
-          <Button type="primary" htmlType="submit">
-            Login
-          </Button>
-        </Form.Item>
-      </Form>
+          <Form.Item
+            label="Email"
+            name={"email"}
+            rules={[
+              {
+                required: true,
+                message: "Please enter email!",
+              },
+            ]}
+          >
+            <Input
+              onChange={() => {
+                setError();
+              }}
+            />
+          </Form.Item>
+          <Form.Item
+            label="Password"
+            name={"password"}
+            rules={[
+              {
+                required: true,
+                message: "Please enter password!",
+              },
+            ]}
+          >
+            <Input
+              onChange={() => {
+                setError();
+              }}
+            />
+          </Form.Item>
+          <div className="error-wrapper">{error}</div>
+          <Form.Item {...tailLayout} className="login-form-tail">
+            <Button type="primary" htmlType="submit">
+              Login
+            </Button>
+          </Form.Item>
+        </Form>
+      </div>
     </div>
   );
 };

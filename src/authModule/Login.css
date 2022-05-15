@@ -1,4 +1,8 @@
-.login-main {
+.login-main-wrapper {
+  padding: 10%;
+}
+
+.login-form-wrapper {
   background: white;
   display: flex;
   justify-content: center;
@@ -7,7 +11,6 @@
   box-shadow: 1px 2px 1px 2px #6188ed;
   width: 500px;
   margin: auto;
-  margin-top: 20%;
   padding: 20px;
 }
 
